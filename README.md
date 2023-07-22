@@ -59,3 +59,42 @@ System Details:
   you don't know the technical answer to something. But do not expect more info on this problem from the business folk.
 
 ---    
+
+### Project Structure      
+
+        toll-plaza-system
+        │---build.sbt
+        │---application.conf
+        │---.gitignore
+        │---README.md
+        │
+        └───src
+        │   └───main
+        │       └───scala
+        │           │---Main.scala
+        │           │---TollPlazaApp.scala
+        │           │---TollPlazaCoordinator.scala
+        │           │---TollBooth.scala
+        │           │---Vehicle.scala
+        │           │---VehicleProcessor.scala
+        │           │---KafkaConsumer.scala
+        │
+        └───target 
+
+---    
+
+### Sample Input
+
+      {
+        "type": "car",
+        "number": "KA05-1234",
+        "ingress_timestamp": 1679817600,  // epoch timestamp for January 26, 2023, 12:00:00 AM UTC
+        "egress_timestamp": 1679817610,   // epoch timestamp for January 26, 2023, 12:00:10 AM UTC
+        "egress_booth": 1
+      }
+
+- In this example, we have a vehicle that is a car with the registration number "KA05-1234." The vehicle enters the toll 
+  plaza at an ingress timestamp of 1679817600 (which is equivalent to January 26, 2023, 12:00:00 AM UTC) and exits the 
+  toll plaza at an egress timestamp of 1679817610 (which is equivalent to January 26, 2023, 12:00:10 AM UTC) through 
+  booth number 1.
+
